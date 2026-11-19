@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="qupa">
+  <xacro:arg name="mesh_dir" default="package://qupa_mini_description/meshes"/>
+
+  <!-- Medidas del ensamble en metros. +X corresponde a +Z del CAD. -->
+  <xacro:property name="wheel_radius" value="0.016"/>
+  <xacro:property name="wheel_separation" value="0.0795"/>
+  <xacro:property name="tread_width" value="0.006"/>
+  <xacro:property name="wheel_x_offset" value="0.00005"/>
+  <xacro:property name="ball_radius" value="0.00635"/>
+
+  <xacro:macro name="cad_visual" params="mesh">
+    <visual>
+      <geometry>
+        <mesh filename="$(arg mesh_dir)/${mesh}.dae"/>
+      </geometry>
+    </visual>
+  </xacro:macro>
+
+  <xacro:macro name="drive_wheel" params="side sign">
+    <link name="${side}_wheel_link">
+      <xacro:cad_visual mesh="${side}_wheel"/>
+      <collision>
+        <origin xyz="0 0 0" rpy="${-pi / 2} 0 0"/>
+        <geometry>
+          <cylinder radius="${wheel_radius}" length="${tread_width}"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${side}_wheel_joint" type="continuous">
+      <parent link="base_link"/>
+      <child link="${side}_wheel_link"/>
+      <origin xyz="${-sign * wheel_x_offset} ${sign * wheel_separation / 2} 0" rpy="0 0 0"/>
+      <axis xyz="0 1 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:macro name="ball_support" params="end xyz">
+    <link name="${end}_ball_link">
+      <xacro:cad_visual mesh="${end}_ball"/>
+      <collision>
+        <geometry>
+          <sphere radius="${ball_radius}"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="${end}_ball_joint" type="fixed">
+      <parent link="base_link"/>
+      <child link="${end}_ball_link"/>
+      <origin xyz="${xyz}" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <link name="base_footprint"/>
+  <joint name="base_footprint_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 ${wheel_radius}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="base_link">
+    <xacro:cad_visual mesh="base_link"/>
+
+    <!-- Envolventes simples del chasis, la tapa y el soporte superior. -->
+    <collision name="lower_shell">
+      <origin xyz="0 0 0.003"/>
+      <geometry><box size="0.086 0.068 0.026"/></geometry>
+    </collision>
+    <collision name="main_shell">
+      <origin xyz="0 0 0.05343"/>
+      <geometry><cylinder radius="0.048248" length="0.07486"/></geometry>
+    </collision>
+    <collision name="top_cover">
+      <origin xyz="0 0 0.10021"/>
+      <geometry><cylinder radius="0.054205" length="0.0187"/></geometry>
+    </collision>
+    <collision name="mirror_mount">
+      <origin xyz="0 0 0.1321715"/>
+      <geometry><cylinder radius="0.0195" length="0.024343"/></geometry>
+    </collision>
+    <collision name="mirror_plate">
+      <origin xyz="0 0 0.145343"/>
+      <geometry><box size="0.08 0.08 0.002"/></geometry>
+    </collision>
+  </link>
+
+  <xacro:drive_wheel side="left" sign="1"/>
+  <xacro:drive_wheel side="right" sign="-1"/>
+  <xacro:ball_support end="front" xyz="0.03799743 0.000006 -0.00915"/>
+  <xacro:ball_support end="rear" xyz="-0.03800064 0.0000082 -0.00965"/>
+</robot>

@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>qupa_mini_description</name>
+  <version>0.1.0</version>
+  <description>Modelo URDF del robot diferencial Qupa, derivado de su ensamble CAD.</description>
+  <maintainer email="qupa@example.com">Qupa</maintainer>
+  <license>NOASSERTION</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>xacro</exec_depend>
+  <exec_depend>urdf_launch</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
