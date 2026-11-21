@@ -71,15 +71,15 @@
       <geometry><cylinder radius="0.048248" length="0.07486"/></geometry>
     </collision>
     <collision name="top_cover">
-      <origin xyz="0 0 0.10021"/>
-      <geometry><cylinder radius="0.054205" length="0.0187"/></geometry>
+      <origin xyz="0 0 0.1032273"/>
+      <geometry><cylinder radius="0.054205" length="0.0245546"/></geometry>
     </collision>
     <collision name="mirror_mount">
-      <origin xyz="0 0 0.1321715"/>
+      <origin xyz="0 0 0.1371715"/>
       <geometry><cylinder radius="0.0195" length="0.024343"/></geometry>
     </collision>
     <collision name="mirror_plate">
-      <origin xyz="0 0 0.145343"/>
+      <origin xyz="0 0 0.150343"/>
       <geometry><box size="0.08 0.08 0.002"/></geometry>
     </collision>
   </link>

@@ -30,19 +30,19 @@
       </geometry>
     </collision>
     <collision name="top_cover">
-      <origin xyz="0 0 0.10021"/>
+      <origin xyz="0 0 0.1032273"/>
       <geometry>
-        <cylinder length="0.0187" radius="0.054205"/>
+        <cylinder length="0.0245546" radius="0.054205"/>
       </geometry>
     </collision>
     <collision name="mirror_mount">
-      <origin xyz="0 0 0.1321715"/>
+      <origin xyz="0 0 0.1371715"/>
       <geometry>
         <cylinder length="0.024343" radius="0.0195"/>
       </geometry>
     </collision>
     <collision name="mirror_plate">
-      <origin xyz="0 0 0.145343"/>
+      <origin xyz="0 0 0.150343"/>
       <geometry>
         <box size="0.08 0.08 0.002"/>
       </geometry>
