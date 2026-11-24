@@ -1,5 +1,8 @@
 # Mini Qupa Description
 
+[![Maintainer Byron Mota](https://img.shields.io/badge/Maintainer-Byron%20Mota-green)](https://github.com/mbyr0n)
+[![Maintainer Walter Gonzabay](https://img.shields.io/badge/Maintainer-Walter%20Gonzabay-green)](https://github.com/Walalex04)
+
 Paquete de descripción del robot diferencial **Mini Qupa** para ROS 2. Incluye modelos URDF/Xacro, mallas visuales, archivos CAD originales y marcos de referencia de sus componentes.
 
 ![Modelo del Mini Qupa con su cámara, espejo y difusor](docs/images/mini_qupa.png)
@@ -107,10 +110,7 @@ Los argumentos `camera_optical_xyz` y `camera_optical_rpy` permiten ajustar el m
 | Dinámica y simulación | Masas, inercias, contacto de los apoyos y controlador pendientes |
 | Pruebas en ROS 2 | Ejecución en RViz y Gazebo pendiente |
 
-## Mantenedores, licencia y referencias
-
-[![Maintainer Byron Mota](https://img.shields.io/badge/Maintainer-Byron%20Mota-green)](https://github.com/mbyr0n)
-[![Maintainer Walter Gonzabay](https://img.shields.io/badge/Maintainer-Walter%20Gonzabay-green)](https://github.com/Walalex04)
+## Licencia y referencias
 
 Para consultas o reportes, utiliza las [issues del repositorio](https://github.com/mbyr0n/mini_qupa_description/issues).
 
