@@ -4,5 +4,6 @@ project(mini_qupa_description)
 find_package(ament_cmake REQUIRED)
 
 install(DIRECTORY urdf meshes DESTINATION share/${PROJECT_NAME})
+install(FILES LICENSE DESTINATION share/${PROJECT_NAME})
 
 ament_package()

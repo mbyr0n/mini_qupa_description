@@ -107,11 +107,14 @@ Los argumentos `camera_optical_xyz` y `camera_optical_rpy` permiten ajustar el m
 | Dinámica y simulación | Masas, inercias, contacto de los apoyos y controlador pendientes |
 | Pruebas en ROS 2 | Ejecución en RViz y Gazebo pendiente |
 
-## Autor, licencia y referencias
+## Mantenedores, licencia y referencias
 
-Repositorio mantenido por [@mbyr0n](https://github.com/mbyr0n). Para consultas o reportes, utiliza las [issues del repositorio](https://github.com/mbyr0n/mini_qupa_description/issues).
+[![Maintainer Byron Mota](https://img.shields.io/badge/Maintainer-Byron%20Mota-green)](https://github.com/mbyr0n)
+[![Maintainer Walalex04](https://img.shields.io/badge/Maintainer-Walalex04-green)](https://github.com/Walalex04)
 
-La licencia está pendiente de definir. `package.xml` declara `NOASSERTION` y su correo de mantenedor es un marcador de posición.
+Para consultas o reportes, utiliza las [issues del repositorio](https://github.com/mbyr0n/mini_qupa_description/issues).
+
+Este proyecto se distribuye bajo la [licencia MIT](LICENSE).
 
 - [Convenciones de unidades y ejes de ROS, REP 103](https://www.ros.org/reps/rep-0103.html)
 - [Tutoriales de URDF para ROS 2](https://docs.ros.org/en/jazzy/Tutorials/Intermediate/URDF/URDF-Main.html)

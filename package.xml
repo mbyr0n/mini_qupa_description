@@ -3,8 +3,9 @@
   <name>mini_qupa_description</name>
   <version>0.3.0</version>
   <description>Modelo URDF del robot diferencial Qupa, derivado de su ensamble CAD.</description>
-  <maintainer email="qupa@example.com">Qupa</maintainer>
-  <license>NOASSERTION</license>
+  <maintainer email="134468985+mbyr0n@users.noreply.github.com">Byron Mota (mbyr0n)</maintainer>
+  <maintainer email="137128694+Walalex04@users.noreply.github.com">Walalex04</maintainer>
+  <license>MIT</license>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <exec_depend>xacro</exec_depend>
