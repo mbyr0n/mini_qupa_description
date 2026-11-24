@@ -110,7 +110,7 @@ Los argumentos `camera_optical_xyz` y `camera_optical_rpy` permiten ajustar el m
 ## Mantenedores, licencia y referencias
 
 [![Maintainer Byron Mota](https://img.shields.io/badge/Maintainer-Byron%20Mota-green)](https://github.com/mbyr0n)
-[![Maintainer Walalex04](https://img.shields.io/badge/Maintainer-Walalex04-green)](https://github.com/Walalex04)
+[![Maintainer Walter Gonzabay](https://img.shields.io/badge/Maintainer-Walter%20Gonzabay-green)](https://github.com/Walalex04)
 
 Para consultas o reportes, utiliza las [issues del repositorio](https://github.com/mbyr0n/mini_qupa_description/issues).
 
