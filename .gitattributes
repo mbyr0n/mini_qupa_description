@@ -1,0 +1,2 @@
+cad/*.obj filter=lfs diff=lfs merge=lfs -text
+cad/*.step filter=lfs diff=lfs merge=lfs -text

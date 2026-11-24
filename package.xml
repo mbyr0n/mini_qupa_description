@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="3">
-  <name>qupa_mini_description</name>
-  <version>0.2.0</version>
+  <name>mini_qupa_description</name>
+  <version>0.3.0</version>
   <description>Modelo URDF del robot diferencial Qupa, derivado de su ensamble CAD.</description>
   <maintainer email="qupa@example.com">Qupa</maintainer>
   <license>NOASSERTION</license>

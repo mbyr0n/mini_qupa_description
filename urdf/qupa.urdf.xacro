@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="qupa">
-  <xacro:arg name="mesh_dir" default="package://qupa_mini_description/meshes"/>
+  <xacro:arg name="mesh_dir" default="package://mini_qupa_description/meshes"/>
 
   <!-- Medidas del ensamble en metros. +X corresponde a +Z del CAD. -->
   <xacro:property name="wheel_radius" value="0.016"/>
@@ -88,4 +88,6 @@
   <xacro:drive_wheel side="right" sign="-1"/>
   <xacro:ball_support end="front" xyz="0.03799743 0.000006 -0.00915"/>
   <xacro:ball_support end="rear" xyz="-0.03800064 0.0000082 -0.00965"/>
+
+  <xacro:include filename="component_frames.xacro"/>
 </robot>

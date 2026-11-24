@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.8)
-project(qupa_mini_description)
+project(mini_qupa_description)
 
 find_package(ament_cmake REQUIRED)
 

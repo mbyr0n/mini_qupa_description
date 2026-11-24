@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- Posiciones en metros respecto a base_link, obtenidas del STEP en cad/. -->
+  <!-- Las mallas visuales de estos elementos forman parte de base_link.dae. -->
+  <xacro:arg name="camera_optical_xyz" default="0 0 0"/>
+  <xacro:arg name="camera_optical_rpy" default="-1.5707963267948966 0 -1.5707963267948966"/>
+
+  <xacro:macro name="component_frame" params="name xyz rpy parent:=base_link">
+    <link name="${name}"/>
+    <joint name="${name}_joint" type="fixed">
+      <parent link="${parent}"/>
+      <child link="${name}"/>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+    </joint>
+  </xacro:macro>
+
+  <!-- STEP 1.4. Origen de montaje del motor en el CAD, situado sobre el eje de salida. Ejes paralelos a base_link. -->
+  <xacro:component_frame name="left_motor_link" parent="base_link"
+                         xyz="-5e-05 0.0242 0" rpy="0 0 0"/>
+
+  <!-- STEP 1.5. Origen de montaje del motor en el CAD, situado sobre el eje de salida. Ejes paralelos a base_link. -->
+  <xacro:component_frame name="right_motor_link" parent="base_link"
+                         xyz="5e-05 -0.0242 0" rpy="0 0 0"/>
+
+  <!-- STEP 1.8. Centro de la cara del encapsulado TCS34725 orientada al piso. Aproximacion del centro sensible. -->
+  <xacro:component_frame name="floor_sensor_link" parent="base_link"
+                         xyz="0.01092460143 -0.0003970758108 -0.010406" rpy="0 1.570796327 0"/>
+
+  <!-- STEP 1.14.1. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_rear_left_link" parent="base_link"
+                         xyz="-0.0374567559 0.02107990073 0.05445" rpy="0 0 2.617993878"/>
+
+  <!-- STEP 1.14.2. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_front_left_link" parent="base_link"
+                         xyz="0.04107574727 0.01153742044 0.05525" rpy="0 0 0.2617993878"/>
+
+  <!-- STEP 1.14.3. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_front_right_link" parent="base_link"
+                         xyz="0.04115265966 -0.01189594343 0.05553289742" rpy="0 0 -0.2617993878"/>
+
+  <!-- STEP 1.14.4. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_left_front_link" parent="base_link"
+                         xyz="0.027237002 0.03312485862 0.05525" rpy="0 0 0.872664626"/>
+
+  <!-- STEP 1.14.5. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_left_link" parent="base_link"
+                         xyz="-0.0008213490816 0.04262106817 0.05525" rpy="0 0 1.570796327"/>
+
+  <!-- STEP 1.14.6. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_right_front_link" parent="base_link"
+                         xyz="0.02705507349 -0.03295981878 0.05485" rpy="0 0 -0.872664626"/>
+
+  <!-- STEP 1.14.7. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_right_link" parent="base_link"
+                         xyz="-0.0005728950696 -0.04250434481 0.05535" rpy="0 0 -1.570796327"/>
+
+  <!-- STEP 1.14.8. Centro entre las dos ventanas de lente simplificadas del CAD. +X apunta hacia fuera y +Z hacia arriba. -->
+  <xacro:component_frame name="ir_rear_right_link" parent="base_link"
+                         xyz="-0.03732819573 -0.02056383275 0.05535" rpy="0 0 -2.617993878"/>
+
+  <!-- STEP 1.10.4. Centro de la apertura frontal de la lente OV5647. +X apunta hacia arriba, al espejo. Centro optico nominal. -->
+  <xacro:component_frame name="camera_link" parent="base_link"
+                         xyz="-0.0002019595362 -0.0001510575015 0.1092308703" rpy="0 -1.570796327 0"/>
+
+  <!-- STEP 1.10.4. Convencion optica ROS, +Z hacia el espejo. Roll nominal de imagen pendiente de calibracion. -->
+  <xacro:component_frame name="camera_optical_frame" parent="camera_link"
+                         xyz="$(arg camera_optical_xyz)" rpy="$(arg camera_optical_rpy)"/>
+
+  <!-- STEP 1.13.1. Origen de montaje del espejo segun el STEP, sobre su eje de simetria. Ejes paralelos a base_link. -->
+  <xacro:component_frame name="mirror_link" parent="base_link"
+                         xyz="0 0 0.126" rpy="0 0 0"/>
+
+  <!-- STEP 1.13.4. Centro de la cara plana superior para montar el AprilTag. +Z normal hacia arriba. Ejes paralelos a base_link. -->
+  <xacro:component_frame name="top_plate_link" parent="base_link"
+                         xyz="0 0 0.1513434744" rpy="0 0 0"/>
+
+  <!-- STEP 1.15.1. Origen del conjunto superior en el CAD, en su plano de montaje. Ejes paralelos a base_link. -->
+  <xacro:component_frame name="diffuser_link" parent="base_link"
+                         xyz="0 0 0.09085" rpy="0 0 0"/>
+
+</robot>
